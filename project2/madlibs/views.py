@@ -24,3 +24,6 @@ def madlibForm(request):
     else:
         form = MadLibForm()
     return render(request, 'madlibs/madlib-form.html', {'form': form})
+
+# User: CodySquadroni
+# Password: YouRock!
