@@ -1,0 +1,21 @@
+{% extends 'madlibs/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+        <h1 class="text-center">{{ intro }}</h1>
+        <div class="row d-flex justify-content-center">
+            {% comment %} mad lib generic image display? {% endcomment %}
+            <div class="col-md-3 m-2">
+                <h2><a href={% url 'madlibs:madlib-form' %}>Create a mad lib story!</a></h2>
+            </div>
+        </div>
+    {% endblock %}
+            
+</body>
+</html>
