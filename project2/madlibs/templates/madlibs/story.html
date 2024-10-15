@@ -8,10 +8,12 @@
 </head>
 <body>
     {% block body %}
-        <h1>{{ title }}</h1>
-        <main>
-            <p>{{ story }}</p>
-        </main>
+        <h1 class="m-1 text-center">{{ title }}</h1>
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6 text-center">
+                <p class="mt-3">{{ madlib }}</p>
+            </div>
+        </div>
     {% endblock %}
 </body>
 </html>

@@ -19,18 +19,8 @@ def madlibForm(request):
             story = random.choice(MadLib.objects.all())
             # **form.cleaned_data:
             # the ** syntax passes the form information (key-value pair) into placeholders within the madlib
-            madlib = madlib.template.format(**form.cleaned_data_)
-            return render(request, 'story.html', {'madlib': madlib, 'title': story.title})
+            madlib = story.template.format(**form.cleaned_data)
+            return render(request, 'madlibs/story.html', {'madlib': madlib, 'title': story.title})
     else:
         form = MadLibForm()
     return render(request, 'madlibs/madlib-form.html', {'form': form})
-
-# Create Frontend using Django (Create a User-Friendly Design)
-
-# Use Views/Templates/URL Patterns as You See Best Fit
-# Use Database as You See Best Fit
-# Display Story to The User After Submission
-# Minimums
-#   A Minimum of 7 Form Fields (For example place, adjective, famous person)
-#   A Minimum of 15 Random Mad Lib Stories
-#       use {} with the key value inside to replace with form information
